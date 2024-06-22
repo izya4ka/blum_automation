@@ -1,2 +1,8 @@
 /sessions.json
 /.venv/
+/.idea/.gitignore
+/.idea/blum_automation.iml
+/.idea/dataSources.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
