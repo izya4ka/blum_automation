@@ -127,9 +127,9 @@ class Client:
         Выводим статус аккаунта
         :param status: словарь со статусом, который мы получили в функции get_status
         """
-        print(f"{self.prefix()} Баланс: {status["availableBalance"]}")
+        print(f"{self.prefix()} Баланс: {status['availableBalance']}")
         print(
-            f"{self.prefix()} Время запроса: {datetime.fromtimestamp(status["timestamp"] / 1000).strftime('%H:%M:%S %d-%m-%Y')}")
+            f"{self.prefix()} Время запроса: {datetime.fromtimestamp(status['timestamp'] / 1000).strftime('%H:%M:%S %d-%m-%Y')}")
 
     async def game_get(self, session: aiohttp.client.ClientSession):
         """
@@ -281,6 +281,7 @@ class Client:
 
                 except TokenException:
                     await self.refresh_token()  # Перезапрашиваем токен, если что он обновится
+                    continue
             await asyncio.sleep(self.to_wait)  # Ждём окончания фарминга
 
 
